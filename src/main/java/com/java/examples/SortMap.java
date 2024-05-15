@@ -42,15 +42,9 @@ public class SortMap {
 
 
 
-        Employee e1 = Employee.builder()
-                .id(1)
-                .empName("Jack")
-                .age(24)
-                .build();
+        Employee e1 = EmployeeUtils.employee1();
 
-        Employee e2 = Employee.builder().id(2)
-                .empName("Lokesh")
-                .age(25).build();
+        Employee e2 = EmployeeUtils.employee2();
 
         Map<String, Employee> employeeMap = Map.of(e1.getEmpName(), e1, e2.getEmpName(), e2);
         System.out.println("Original...");

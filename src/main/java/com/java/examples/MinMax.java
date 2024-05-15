@@ -20,13 +20,7 @@ public class MinMax {
 
         System.out.printf("minChar : "+minChar+"\n");;
 
-        List<Employee> employees = List.of(Employee.builder()
-                .id(1)
-                .empName("Lokesh")
-                .age(24)
-                .build(), Employee.builder().id(2)
-                .empName("Jack")
-                .age(25).build());
+        List<Employee> employees = EmployeeUtils.employees();
 
         Employee employeeMax = employees.stream().max(Comparator.comparing(Employee::getAge)).get();
         System.out.printf("employeeMax : "+employeeMax +"\n");

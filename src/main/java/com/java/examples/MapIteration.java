@@ -12,7 +12,7 @@ public class MapIteration {
             System.out.println(entry.getKey() + ":" + entry.getValue());
         }
 
-        map.forEach((k,v) -> System.out.println("Key :"+k+ " value : "+v));
+        map.forEach((k, v) -> System.out.println("Key :" + k + " value : " + v));
 
         map.keySet().forEach(k -> System.out.println((k + ":" + map.get(k))));
 
