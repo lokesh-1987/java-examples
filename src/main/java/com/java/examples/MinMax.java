@@ -26,6 +26,5 @@ public class MinMax {
         System.out.printf("employeeMax : "+employeeMax +"\n");
         Employee employeeMin = employees.stream().min(Comparator.comparing(Employee::getAge)).get();
         System.out.printf("employeeMin : "+employeeMin +"\n");
-
     }
 }
