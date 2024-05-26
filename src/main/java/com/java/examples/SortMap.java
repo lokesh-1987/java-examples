@@ -39,11 +39,7 @@ public class SortMap {
         System.out.println("Sorted...reversed...");
         System.out.println(result1);
 
-
-
-
         Employee e1 = EmployeeUtils.employee1();
-
         Employee e2 = EmployeeUtils.employee2();
 
         Map<String, Employee> employeeMap = Map.of(e1.getEmpName(), e1, e2.getEmpName(), e2);
