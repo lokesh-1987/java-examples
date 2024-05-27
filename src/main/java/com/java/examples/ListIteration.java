@@ -1,5 +1,6 @@
 package com.java.examples;
 
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.IntStream;
@@ -13,7 +14,15 @@ public class ListIteration {
         List<Integer> sortedIntegerList = integerList.stream().sorted(Integer::compareTo).toList();
         System.out.printf("sortedIntegerList : " + sortedIntegerList + "\n");
 
-        Optional<Integer> maxInteger = integerList.stream().max(Integer::compareTo);
+        Comparator<Integer> comparator = (v1, v2) -> v1.compareTo(v2);
+        Comparator<Integer> comparator1 = Integer::compareTo;
+        Comparator<Integer> comparator2 = Comparator.comparing(Integer::valueOf);
+
+        Optional<Integer> maxInteger = integerList.stream().max(comparator);
+        Optional<Integer> maxInteger1 = integerList.stream().max(comparator1);
+        Optional<Integer> maxInteger2 = integerList.stream().max(comparator2);
         System.out.printf("maxInteger : " + maxInteger.get() + "\n");
+        System.out.printf("maxInteger1 : " + maxInteger.get() + "\n");
+        System.out.printf("maxInteger2 : " + maxInteger.get() + "\n");
     }
 }
