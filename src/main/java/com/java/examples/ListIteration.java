@@ -22,7 +22,7 @@ public class ListIteration {
         Optional<Integer> maxInteger1 = integerList.stream().max(comparator1);
         Optional<Integer> maxInteger2 = integerList.stream().max(comparator2);
         System.out.printf("maxInteger : " + maxInteger.get() + "\n");
-        System.out.printf("maxInteger1 : " + maxInteger.get() + "\n");
-        System.out.printf("maxInteger2 : " + maxInteger.get() + "\n");
+        System.out.printf("maxInteger1 : " + maxInteger1.get() + "\n");
+        System.out.printf("maxInteger2 : " + maxInteger2.get() + "\n");
     }
 }

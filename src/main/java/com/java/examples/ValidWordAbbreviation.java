@@ -26,6 +26,11 @@ public class ValidWordAbbreviation {
     }
 
     public static boolean validWordAbbreviation(String word, String abbr) {
+
+        if (abbr.length() > word.length()) {
+            return false;
+        }
+
         int m = word.length(), n = abbr.length();
         int i = 0, j = 0;
 
@@ -36,7 +41,7 @@ public class ValidWordAbbreviation {
                 continue;
             }
 
-            if (abbr.length() > word.length() || (abbr.charAt(j) <= '0' && abbr.charAt(j) > '9')) {
+            if (abbr.charAt(j) <= '0' && abbr.charAt(j) > '9') {
                 return false;
             }
 
