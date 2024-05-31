@@ -12,7 +12,7 @@ public class MapIteration {
         Iterator<Map.Entry<String, Integer>> iterator = map.entrySet().iterator();
         while (iterator.hasNext()) {
             Map.Entry<String, Integer> entry = iterator.next();
-            System.out.printf("key : "+entry.getKey()+ " Value : "+entry.getValue());
+            System.out.printf("key : " + entry.getKey() + " Value : " + entry.getValue());
             System.out.printf("\n");
         }
 

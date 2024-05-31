@@ -21,12 +21,12 @@ public class MyHashMap<k, v> {
 
     public int hashFunction(k key) {
         int hashCode = key.hashCode();
-        return hashCode%noOfBuckets;
+        return hashCode % noOfBuckets;
     }
 
     public void put(k key, v val) {
         int bucketIndex = hashFunction(key);
-        MapNode<k,v> head = buckets.get(bucketIndex);
+        MapNode<k, v> head = buckets.get(bucketIndex);
 
         while (head != null) {
             if (head.key.equals(key)) {
@@ -38,7 +38,7 @@ public class MyHashMap<k, v> {
 
         size++;
         head = buckets.get(bucketIndex);
-        MapNode<k,v> newNode = new MapNode<>(key, val);
+        MapNode<k, v> newNode = new MapNode<>(key, val);
         newNode.next = head;
         buckets.set(bucketIndex, newNode);
     }
@@ -49,7 +49,7 @@ public class MyHashMap<k, v> {
 
     public v get(k key) {
         int bucketIndex = hashFunction(key);
-        MapNode<k,v> head = buckets.get(bucketIndex);
+        MapNode<k, v> head = buckets.get(bucketIndex);
         while (head != null) {
             if (head.key.equals(key)) {
                 return head.val;

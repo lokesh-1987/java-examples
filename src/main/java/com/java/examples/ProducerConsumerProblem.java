@@ -40,14 +40,14 @@ public class ProducerConsumerProblem {
         while (true) {
             int produced = new Random().nextInt(100);
             blockingQueue.put(produced);
-            System.out.println("Produced : "+produced);
+            System.out.println("Produced : " + produced);
         }
     }
 
     private static void consumer() throws InterruptedException {
         while (true) {
             Integer consumed = blockingQueue.take();
-            System.out.println("Consumed : "+consumed);
+            System.out.println("Consumed : " + consumed);
         }
     }
 }

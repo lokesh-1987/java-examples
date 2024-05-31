@@ -3,7 +3,7 @@ package com.java.examples;
 public class SecondHighestNumber {
 
     public static void main(String[] args) {
-        int[] nos = {22,45,54,98,28,99,65,79};
+        int[] nos = {22, 45, 54, 98, 28, 99, 65, 79};
         System.out.println(secondLargestNo(nos));
     }
 

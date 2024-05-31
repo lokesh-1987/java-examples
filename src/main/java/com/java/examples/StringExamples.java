@@ -33,6 +33,6 @@ public class StringExamples {
         }
 
         String s4 = s1.replace("Lo", "");
-        System.out.println("s4 : "+s4 +" & s1 : "+s1);
+        System.out.println("s4 : " + s4 + " & s1 : " + s1);
     }
 }

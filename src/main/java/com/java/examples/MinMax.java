@@ -11,20 +11,21 @@ public class MinMax {
                 .max(Comparator.comparing(String::valueOf))
                 .get();
 
-        System.out.printf("maxChar : "+maxChar +"\n");
+        System.out.printf("maxChar : " + maxChar + "\n");
 
 
         String minChar = Stream.of("6", "2", "1", "9", "8")
                 .min(Comparator.comparing(String::valueOf))
                 .get();
 
-        System.out.printf("minChar : "+minChar+"\n");;
+        System.out.printf("minChar : " + minChar + "\n");
+        ;
 
         List<Employee> employees = EmployeeUtils.employees();
 
         Employee employeeMax = employees.stream().max(Comparator.comparing(Employee::getAge)).get();
-        System.out.printf("employeeMax : "+employeeMax +"\n");
+        System.out.printf("employeeMax : " + employeeMax + "\n");
         Employee employeeMin = employees.stream().min(Comparator.comparing(Employee::getAge)).get();
-        System.out.printf("employeeMin : "+employeeMin +"\n");
+        System.out.printf("employeeMin : " + employeeMin + "\n");
     }
 }

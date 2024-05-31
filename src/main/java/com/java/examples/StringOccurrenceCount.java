@@ -22,26 +22,26 @@ public class StringOccurrenceCount {
             }
         }
 
-        System.out.printf("map : "+map +"\n");
+        System.out.printf("map : " + map + "\n");
 
 
         Map<String, Long> mapCnt = str.chars()
                 .mapToObj(Character::toString)
                 .collect(Collectors.groupingBy(e -> e, Collectors.counting()));
 
-        System.out.printf("mapCnt : "+mapCnt +"\n");
+        System.out.printf("mapCnt : " + mapCnt + "\n");
 
-        Map<Character, Integer> map1 = map.entrySet().stream().filter( e -> e.getValue() == 1)
+        Map<Character, Integer> map1 = map.entrySet().stream().filter(e -> e.getValue() == 1)
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (v1, v2) -> v1, LinkedHashMap::new));
 
-        System.out.printf("map1 "+ map1+"\n");
+        System.out.printf("map1 " + map1 + "\n");
 
 
         String strNew = Arrays.stream(str.split("")).distinct().collect(Collectors.joining());
-        System.out.printf("strNew : "+strNew+"\n");
+        System.out.printf("strNew : " + strNew + "\n");
 
         long cnt = str.chars().filter(ch -> ch == 'g').count();
-        System.out.printf("cnt : "+cnt+"\n");
+        System.out.printf("cnt : " + cnt + "\n");
 
     }
 }
