@@ -1,5 +1,18 @@
 package com.java.examples;
 
+
+//SELECT
+//e.location,
+//COUNT(*) AS Count
+//FROM
+//Employee e
+//JOIN
+//Employee m ON e.managerId = m.id
+//        WHERE
+//e.salary > m.salary
+//GROUP BY
+//e.location
+
 public class CoinChange2 {
 
     //https://www.youtube.com/watch?v=UZ5QK-UV8MI&t=93s

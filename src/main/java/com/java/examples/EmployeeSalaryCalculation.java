@@ -28,5 +28,9 @@ public class EmployeeSalaryCalculation {
             System.out.println("emp with 3rd highest salary: " + emp + "\n");
         });
 
+
+       Optional<Employee> employee =
+               EmployeeUtils.duplicateEmployees().stream().max(Comparator.comparingDouble(Employee::getSalary));
+
     }
 }
