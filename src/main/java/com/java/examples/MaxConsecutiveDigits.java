@@ -6,7 +6,7 @@ import java.util.Map;
 public class MaxConsecutiveDigits {
 
     public static void main(String[] args) {
-        int number = 1133456666;
+        int number = 1133646666;
         maxConsecutiveDigits(number);
     }
 
@@ -22,8 +22,10 @@ public class MaxConsecutiveDigits {
             if (currentDigit == prevDigit) {
                 map.put(currentDigit, ++count);
             } else {
+                if (map.containsKey(currentDigit) && map.get(currentDigit) < count) {
+                    map.put(currentDigit, 1);
+                }
                 count = 1;
-                map.put(currentDigit, 1);
             }
             prevDigit = currentDigit;
             currentNumber = currentNumber / 10;

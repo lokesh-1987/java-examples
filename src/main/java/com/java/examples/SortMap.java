@@ -36,8 +36,24 @@ public class SortMap {
                 .sorted(Map.Entry.<String, Integer>comparingByKey().reversed())
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
                         (oldValue, newValue) -> oldValue, LinkedHashMap::new));
-        System.out.println("Sorted...reversed...");
+        System.out.println("Sorted1...reversed...");
         System.out.println(result1);
+
+        Map<String, Integer> result2 = unsortMap.entrySet().stream()
+                .sorted(Map.Entry.comparingByValue())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+
+        System.out.println("Sorted2...");
+        System.out.println(result2);
+
+
+        Map<String, Integer> result3 = unsortMap.entrySet().stream()
+                .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+        System.out.println("Sorted3...reversed...");
+        System.out.println(result3);
 
         Employee e1 = EmployeeUtils.employee1();
         Employee e2 = EmployeeUtils.employee2();
@@ -75,6 +91,9 @@ public class SortMap {
                 .sorted(Map.Entry.<String, Employee>comparingByValue(Comparator.comparing(Employee::getEmpName)).reversed())
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
                         (v1, v2) -> v1, LinkedHashMap::new));
+
+        Map<String, Optional<Employee>> employeeMap1 = employeeMap.values().stream()
+                .collect(Collectors.groupingBy(Employee::getEmpName, Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary))));
 
         System.out.println("Sorted...reversed...");
         System.out.println(sortedEmployeeMapByValueName);
