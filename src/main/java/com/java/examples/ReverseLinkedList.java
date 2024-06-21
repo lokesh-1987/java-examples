@@ -8,13 +8,14 @@ public class ReverseLinkedList {
         head.next.next = new ListNode(3);
         head.next.next.next = new ListNode(4);
 
-//        System.out.println("listNode :");
-//        while (head != null) {
-//            System.out.println(head.val);
-//            head = head.next;
-//        }
+        ListNode headTemp = head;
+        System.out.println("listNode :");
+        while (headTemp != null) {
+            System.out.println(headTemp.val);
+            headTemp = headTemp.next;
+        }
 
-        ListNode reverseListNode = reverseList(head);
+        ListNode reverseListNode = reverseListUsingTemp(head);
 
         System.out.println("reverseListNode :");
         while (reverseListNode != null) {
