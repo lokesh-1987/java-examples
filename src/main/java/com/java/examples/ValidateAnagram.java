@@ -20,6 +20,9 @@ public class ValidateAnagram {
         Arrays.sort(chars1);
         Arrays.sort(chars2);
 
+        System.out.println(chars1);
+        System.out.println(chars2);
+
         for (int i = 0; i < chars1.length; i++) {
             if (chars1[i] != chars2[i]) {
                 return false;

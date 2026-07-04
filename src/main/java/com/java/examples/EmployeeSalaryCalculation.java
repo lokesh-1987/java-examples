@@ -25,7 +25,7 @@ public class EmployeeSalaryCalculation {
                 .limit(3)
                 .skip(2);
         mapMaxSalByDept1Nth.forEach(emp -> {
-            System.out.println("emp with 3rd highest salary: " + emp + "\n");
+            System.out.println("emp with 3rd highest salary: " + emp.getEmpName() + "\n");
         });
 
 

@@ -12,25 +12,26 @@ public class MaxConsecutiveDigits {
 
     private static void maxConsecutiveDigits(int number) {
 
-        Map<Integer, Integer> map = new HashMap<>();
-        int count = 1;
-        int currentNumber = number / 10;
-        int prevDigit = number % 10;
 
-        while (currentNumber > 0) {
-            int currentDigit = currentNumber % 10;
-            if (currentDigit == prevDigit) {
-                map.put(currentDigit, ++count);
-            } else {
-                if (map.containsKey(currentDigit) && map.get(currentDigit) < count) {
-                    map.put(currentDigit, 1);
-                }
-                count = 1;
-            }
-            prevDigit = currentDigit;
-            currentNumber = currentNumber / 10;
-        }
-
-        System.out.println("cosecutive repetative digits count" + map);
+//        Map<Integer, Integer> map = new HashMap<>();
+//        int count = 1;
+//        int currentNumber = number / 10;
+//        int prevDigit = number % 10;
+//
+//        while (currentNumber > 0) {
+//            int currentDigit = currentNumber % 10;
+//            if (currentDigit == prevDigit) {
+//                map.put(currentDigit, ++count);
+//            } else {
+//                if (map.containsKey(currentDigit) && map.get(currentDigit) < count) {
+//                    map.put(currentDigit, 1);
+//                }
+//                count = 1;
+//            }
+//            prevDigit = currentDigit;
+//            currentNumber = currentNumber / 10;
+//        }
+//
+//        System.out.println("cosecutive repetative digits count" + map);
     }
 }

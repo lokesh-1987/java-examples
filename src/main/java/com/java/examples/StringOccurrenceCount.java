@@ -1,9 +1,6 @@
 package com.java.examples;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class StringOccurrenceCount {
@@ -24,12 +21,34 @@ public class StringOccurrenceCount {
 
         System.out.printf("map : " + map + "\n");
 
-
-        Map<String, Long> mapCnt = str.chars()
-                .mapToObj(Character::toString)
+        Map<Character, Long> mapCnt = str.chars()
+                .mapToObj(c -> (char) c)
                 .collect(Collectors.groupingBy(e -> e, Collectors.counting()));
-
         System.out.printf("mapCnt : " + mapCnt + "\n");
+
+        //
+        Map<Character, Long> mapCnt1 = str.chars()
+                .mapToObj(c -> (char) c)
+                .collect(Collectors.groupingBy(e -> e, LinkedHashMap::new, Collectors.counting()));
+
+        Character c1 = mapCnt1.entrySet().stream()
+                .sorted(Map.Entry.comparingByValue())
+                .map(Map.Entry::getKey)
+                .findFirst().orElse(null);
+        System.out.println("First non-repetitive Char : "+c1);
+        //
+
+        Character c3 = mapCnt1.entrySet().stream()
+                .sorted(Map.Entry.comparingByValue())
+                .limit(3)
+                .skip(1)
+                .map(Map.Entry::getKey)
+                .findFirst().orElse(null);
+        System.out.println("Third most non-repetitive Char : "+c3);
+
+        Character c = mapCnt1.entrySet().stream().filter(e -> e.getValue() == 1).map(Map.Entry::getKey)
+                .findFirst().orElse(null);
+        System.out.println("First non-repetitive Char : "+ c);
 
         Map<Character, Integer> map1 = map.entrySet().stream().filter(e -> e.getValue() == 1)
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (v1, v2) -> v1, LinkedHashMap::new));

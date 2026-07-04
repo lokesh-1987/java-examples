@@ -1,12 +1,13 @@
 package com.java.examples;
 
+//to achieve immutability, when you have large number of constructor parameters -- Usage
 public class Student {
 
     private Integer id;
     private String name;
     private Integer marks;
 
-    public Student(Builder builder) {
+    private Student(Builder builder) {
         this.id = builder.id;
         this.name = builder.name;
         this.marks = builder.marks;
@@ -16,24 +17,12 @@ public class Student {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public Integer getMarks() {
         return marks;
-    }
-
-    public void setMarks(Integer marks) {
-        this.marks = marks;
     }
 
     public static class Builder {

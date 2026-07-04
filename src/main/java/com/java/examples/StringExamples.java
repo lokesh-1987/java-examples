@@ -13,11 +13,15 @@ public class StringExamples {
             System.out.println("s1 == s2 address is equal");
         }
         if (s1.equals(s2)) {
-            System.out.println(" content is equal");
+            System.out.println("content is equal");
         }
 
         if (s3.equals(s1)) {
-            System.out.println(" content is equal");
+            System.out.println("content is equal");
+        }
+
+        if (s3.hashCode() == s1.hashCode()) {
+            System.out.println("hashcode is equal");
         }
 
         if (s1 == s3) {

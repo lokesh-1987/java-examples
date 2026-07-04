@@ -19,7 +19,6 @@ public class MinMax {
                 .get();
 
         System.out.printf("minChar : " + minChar + "\n");
-        ;
 
         List<Employee> employees = EmployeeUtils.employees();
 

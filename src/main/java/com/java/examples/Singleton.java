@@ -1,10 +1,26 @@
 package com.java.examples;
 
+// race around condition in Multithreaded env, serialization and cloning all break Singleton pattern in Java
 public class Singleton {
 
     private static Singleton instance = null;
 
     private Singleton() {
+
+        if (instance != null) {
+            //throw runtime exception
+        }
+    }
+
+    //serialization handling -remedy
+    protected Object readResolve() {
+        return getInstance2();
+    }
+
+
+    //clone handling
+    protected Object clone() throws CloneNotSupportedException {
+        throw new CloneNotSupportedException("Singleton instance can't supported");
     }
 
     //Lazy Singleton

@@ -11,12 +11,12 @@ public class SecondHighestNumber {
         int highest = Integer.MIN_VALUE;
         int secondHighest = Integer.MIN_VALUE;
 
-        for (int i : nos) {
-            if (i > highest) {
+        for (int no : nos) {
+            if (no > highest) {
                 secondHighest = highest;
-                highest = i;
-            } else if (i > secondHighest) {
-                secondHighest = i;
+                highest = no;
+            } else  if (no > secondHighest){
+                secondHighest = no;
             }
         }
         return secondHighest;

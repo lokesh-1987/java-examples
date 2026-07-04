@@ -20,6 +20,7 @@ public class SortMap {
         unsortMap.put("m", 2);
         unsortMap.put("f", 9);
 
+
         System.out.println("Original...");
         System.out.println(unsortMap);
 
@@ -92,10 +93,12 @@ public class SortMap {
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
                         (v1, v2) -> v1, LinkedHashMap::new));
 
+        System.out.println("Sorted...reversed...");
+        System.out.println(sortedEmployeeMapByValueName);
+
         Map<String, Optional<Employee>> employeeMap1 = employeeMap.values().stream()
                 .collect(Collectors.groupingBy(Employee::getEmpName, Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary))));
 
-        System.out.println("Sorted...reversed...");
-        System.out.println(sortedEmployeeMapByValueName);
+        System.out.println(employeeMap1);
     }
 }
