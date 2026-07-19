@@ -3,12 +3,14 @@ package com.java.examples;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.Objects;
 
 @Getter
 @Setter
 @Builder
+@ToString
 public class Employee {
 
     private Integer id;

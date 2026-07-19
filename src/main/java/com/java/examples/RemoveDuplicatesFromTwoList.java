@@ -2,6 +2,8 @@ package com.java.examples;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class RemoveDuplicatesFromTwoList {
@@ -15,8 +17,11 @@ public class RemoveDuplicatesFromTwoList {
         List<Integer> distinctList = Stream.concat(list1.stream(), list2.stream())
                 .distinct()
                 .toList();
-
         System.out.println(distinctList);
+
+        Set<Integer> distinctList1 = Stream.concat(list1.stream(), list2.stream())
+                        .collect(Collectors.toSet());
+        System.out.println(distinctList1);
 
     }
 }

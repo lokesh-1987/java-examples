@@ -30,9 +30,11 @@ public class StringOccurrenceCount {
         Map<Character, Long> mapCnt1 = str.chars()
                 .mapToObj(c -> (char) c)
                 .collect(Collectors.groupingBy(e -> e, LinkedHashMap::new, Collectors.counting()));
+        System.out.printf("mapCnt1 : " + mapCnt1 + "\n");
 
         Character c1 = mapCnt1.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue())
+                .filter(e -> e.getValue() == 1)
                 .map(Map.Entry::getKey)
                 .findFirst().orElse(null);
         System.out.println("First non-repetitive Char : "+c1);
@@ -42,6 +44,7 @@ public class StringOccurrenceCount {
                 .sorted(Map.Entry.comparingByValue())
                 .limit(3)
                 .skip(1)
+                .filter(e -> e.getValue() == 1)
                 .map(Map.Entry::getKey)
                 .findFirst().orElse(null);
         System.out.println("Third most non-repetitive Char : "+c3);

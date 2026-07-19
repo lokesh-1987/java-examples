@@ -1,9 +1,6 @@
 package com.java.examples;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 //a+b+c=T
 //a+b+c=0
@@ -22,15 +19,18 @@ public class ThreeSumEqualToTarget {
 
         System.out.println(Arrays.toString(arr));
 
-        Set<List<Integer>> result = new HashSet<>();
+        List<List<Integer>> result = new ArrayList<>();
+        List<List<Integer>> indexResult = new ArrayList<>();
 
         for (int i = 0; i < arr.length; i++) {
             for (int j = 1; j < arr.length - 1; j++) {
                 if (arr[i] + arr[j] + arr[j + 1] == targetSum) {
                     result.add(Arrays.asList(arr[i], arr[j], arr[j + 1]));
+                    indexResult.add(Arrays.asList(i, j, j + 1));
                 }
             }
         }
         System.out.println(result);
+        System.out.println(indexResult);
     }
 }

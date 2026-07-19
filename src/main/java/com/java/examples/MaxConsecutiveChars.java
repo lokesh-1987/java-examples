@@ -5,7 +5,7 @@ public class MaxConsecutiveChars {
     public static void main(String[] args) {
         String s = "aabcdeenarrrr";
         String s1 = "1235757877777";
-        int maxConsecutiveLength = maxConsecutiveCharsLength(s1);
+        int maxConsecutiveLength = maxConsecutiveCharsLength(s);
         System.out.println(maxConsecutiveLength);
     }
 
@@ -22,24 +22,5 @@ public class MaxConsecutiveChars {
             }
         }
         return maxConsecutiveLength;
-//        Map<Character, Integer> map = new HashMap<>();
-//
-//        int count = 1;
-//        int i = 0;
-//        while (i < s.length() - 1) {
-
-//            if (s.charAt(i) == s.charAt(++i)) {
-//                map.put(s.charAt(i), ++count);
-//            } else {
-//                if (map.containsKey(s.charAt(i)) && map.get(s.charAt(i)) > count) {
-//                    map.put(s.charAt(i), map.get(s.charAt(i)));
-//                } else {
-//                    map.put(s.charAt(i), 1);
-//                    count = 1;
-//                }
-//
-//            }
-//        }
-//        System.out.println("cosecutive repetative chars count" + map);
     }
 }
